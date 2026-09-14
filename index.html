@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#070b16">
+    <title>Bingo Arena</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <div class="app-shell">
+        <header class="topbar">
+            <div>
+                <div class="eyebrow">BINGO ARENA</div>
+                <h1>Welcome, <span id="playerName">Player</span></h1>
+            </div>
+            <button class="icon-btn" id="refreshBtn" aria-label="Refresh">↻</button>
+        </header>
+
+        <main>
+            <section class="balance-card">
+                <div class="balance-label">TOTAL BALANCE</div>
+                <div class="balance-value" id="totalBalance">0.00</div>
+                <div class="balance-grid">
+                    <div><span>Deposited</span><strong id="mainBalance">0.00</strong></div>
+                    <div><span>Bonus</span><strong id="bonusBalance">0.00</strong></div>
+                    <div><span>Withdrawable</span><strong id="withdrawableBalance">0.00</strong></div>
+                </div>
+            </section>
+
+            <section class="section-heading">
+                <div>
+                    <div class="eyebrow">LIVE ROOMS</div>
+                    <h2>Choose your Bingo</h2>
+                </div>
+                <span class="live-dot">LIVE</span>
+            </section>
+
+            <div id="rooms" class="rooms"></div>
+            <div id="loading" class="loading">Loading Bingo rooms…</div>
+            <div id="error" class="error hidden"></div>
+        </main>
+    </div>
+
+    <div id="roomModal" class="modal hidden">
+        <div class="modal-backdrop" id="modalBackdrop"></div>
+        <section class="modal-panel">
+            <div class="modal-header">
+                <div>
+                    <div class="eyebrow" id="modalEyebrow">BINGO ROOM</div>
+                    <h2 id="modalTitle">Choose your cards</h2>
+                </div>
+                <button class="close-btn" id="closeModal">×</button>
+            </div>
+
+            <div id="roomSummary" class="room-summary"></div>
+            <div id="spectatorNotice" class="notice hidden"></div>
+
+            <div class="selection-bar">
+                <div>
+                    <span>Selected</span>
+                    <strong id="selectedCount">0</strong>
+                </div>
+                <div>
+                    <span>Cost</span>
+                    <strong id="selectedCost">0.00</strong>
+                </div>
+            </div>
+
+            <div id="myCardsSection" class="my-cards-section hidden">
+                <div class="subheading">Your cards in this round</div>
+                <div id="myCards" class="cards-grid"></div>
+            </div>
+
+            <div class="subheading">Available cards</div>
+            <div id="cardsGrid" class="cards-grid"></div>
+
+            <button id="joinSelectedBtn" class="primary-btn">Join with selected cards</button>
+        </section>
+    </div>
+
+    <div id="toast" class="toast"></div>
+    <script src="app.js"></script>
+</body>
+</html>
