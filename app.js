@@ -3,7 +3,7 @@
 // ============================================================
 
 // Change this ONE value after your Render backend is deployed.
-const API_BASE_URL = "https://YOUR-RENDER-SERVICE.onrender.com";
+const API_BASE_URL = "https://bingo-backend-p3z5.onrender.com";
 
 const tg = window.Telegram && window.Telegram.WebApp ? window.Telegram.WebApp : null;
 let rooms = [];
